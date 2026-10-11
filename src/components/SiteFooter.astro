@@ -1,0 +1,113 @@
+---
+import type { Locale } from "../lib/locale";
+import {
+  SITE_DOCS,
+  SITE_GITHUB,
+  SITE_ISSUES,
+  SITE_RELEASES_LATEST,
+} from "../lib/download";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+const home = locale === "en" ? "/en/" : "/";
+---
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="brand-block">
+      <div class="brand">
+        <img src="/app-icon.png" alt="" width="28" height="28" />
+        <span>花哪了</span>
+      </div>
+      <p>{m.footerTagline}</p>
+    </div>
+
+    <div class="cols">
+      <nav aria-label={m.footerProduct}>
+        <p class="col-title">{m.footerProduct}</p>
+        <a href={home}>{m.footerHome}</a>
+        <a href={`${home}#features`}>{m.navFeatures}</a>
+        <a href={`${home}#faq`}>{m.navFaq}</a>
+        <a href={`${home}#download`}>{m.navDownload}</a>
+        <a href={`${home}#privacy`}>{m.footerPrivacy}</a>
+      </nav>
+
+      <nav aria-label={m.footerOpenSource}>
+        <p class="col-title">{m.footerOpenSource}</p>
+        <a href={SITE_GITHUB}>{m.footerGithub}</a>
+        <a href={SITE_DOCS}>{m.footerDocs}</a>
+        <a href={SITE_RELEASES_LATEST}>{m.footerReleases}</a>
+        <a href={SITE_ISSUES}>{m.footerIssues}</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 0 2.75rem;
+  }
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-brand);
+    font-size: 1.25rem;
+  }
+
+  .brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+
+  .brand-block p {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    max-width: 16rem;
+  }
+
+  .cols {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    min-width: 7.5rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .col-title {
+    margin: 0 0 0.15rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+  }
+
+  nav a:hover {
+    color: var(--ink);
+  }
+</style>

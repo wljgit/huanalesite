@@ -1,22 +1,35 @@
-# 落地页（规划）
+# 落地页
 
-**状态：规划，无代码。**
+**状态：已实现（阶段 1 壳）。**
 
-对外主入口：一屏讲清「花哪了」是什么，并给出下载行动点。
+对外主入口：讲清「花哪了」是什么，并给出下载行动点。
+
+## 实现索引
+
+| 项 | 路径 |
+|----|------|
+| 中文页 | `src/pages/index.astro` |
+| 英文页 | `src/pages/en/index.astro` |
+| 组装 | `src/components/HomePage.astro` |
+| 导航品牌 | `src/components/SiteHeader.astro`（icon +「花哪了」，字体 D：ZCOOL XiaoWei） |
+| 首屏 | `src/components/Hero.astro` |
+| 功能 / 隐私 / FAQ / CTA | `Features` / `Privacy` / `Faq` / `CtaBand` |
+| 文案 | `src/i18n/messages.ts` |
+| 页脚 | `src/components/SiteFooter.astro`（产品栏 + 开源栏：GitHub / 文档=本仓 README / Releases / Issues） |
+| 截图 | `public/screenshots/timeline.png`（来自运行中的桌面应用） |
+| Icon | `public/app-icon.png`（来自 `huanale` `src-tauri/icons`） |
 
 ## 范围
 
-- 品牌名「花哪了」作为首屏主视觉信号
-- 一句价值主张（本机自动记下时间花在哪）
-- 主 CTA：下载（Windows；macOS 未齐时可标即将推出）
-- 次要入口：隐私说明、了解功能（页内锚点或短节）
+- 导航品牌：应用 icon +「花哪了」（当前字体 **D · 站酷小薇**；备选 A · Noto Sans SC Black）
+- 一句价值主张 + 下载 CTA
+- 产品预览用真实截图
+- 页内介绍：能力、隐私边界、短 FAQ、页底再 CTA
+- 中 / EN 分路径切换（`/` ↔ `/en/`）
+- 气质参考 [omlx.ai](https://omlx.ai/)
 
 ## 不做
 
-- 仪表盘式功能墙、统计条、多卡片堆砌
+- 仪表盘式功能墙、统计条堆砌
 - 在线试用、账号登录入口
-- 把桌面 UI 嵌进网页当产品本身
-
-## 文案与版式
-
-产品语气与结构见 [../design/product.md](../design/product.md)。实现后本文件改为实现索引（路径、组件名）。
+- 假甘特时间线 / 假 UI 拼图

@@ -1,0 +1,67 @@
+---
+import type { Locale } from "../lib/locale";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+
+const items = [
+  { title: m.featureTimelineTitle, body: m.featureTimelineBody },
+  { title: m.featureReportsTitle, body: m.featureReportsBody },
+  { title: m.featureDigestTitle, body: m.featureDigestBody },
+];
+---
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="eyebrow">{m.featuresEyebrow}</p>
+    <h2>{m.featuresTitle}</h2>
+    <p class="lead">{m.featuresLead}</p>
+    <ul class="grid">
+      {
+        items.map((item) => (
+          <li>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  li {
+    padding: 0;
+  }
+
+  h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

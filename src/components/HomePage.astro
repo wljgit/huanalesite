@@ -1,0 +1,29 @@
+---
+import type { Locale } from "../lib/locale";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "./SiteHeader.astro";
+import Hero from "./Hero.astro";
+import Features from "./Features.astro";
+import Privacy from "./Privacy.astro";
+import Faq from "./Faq.astro";
+import CtaBand from "./CtaBand.astro";
+import SiteFooter from "./SiteFooter.astro";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<BaseLayout locale={locale}>
+  <SiteHeader locale={locale} />
+  <main>
+    <Hero locale={locale} />
+    <Features locale={locale} />
+    <Privacy locale={locale} />
+    <Faq locale={locale} />
+    <CtaBand locale={locale} />
+  </main>
+  <SiteFooter locale={locale} />
+</BaseLayout>

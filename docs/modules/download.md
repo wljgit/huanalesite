@@ -1,17 +1,17 @@
-# 下载分发（规划）
+# 下载分发
 
-**状态：规划，无代码。**
+**状态：下载入口指向本仓（`huanalesite`）公开 Releases；平台资产 URL 可再钉死。**
 
-官网下载按钮指向 **`huanale` 仓库的 GitHub Releases**，本仓不长期托管安装包二进制。
+实现：`src/lib/download.ts`（Vitest）。
 
-## 行为（规划）
+## 行为
 
 | 平台 | 按钮 | 目标 |
 |------|------|------|
-| Windows | 主 CTA | Release 中的安装包（如 NSIS / `.exe`） |
-| macOS | 次要或「即将推出」 | 有包后再链 Release |
+| Windows | 主 CTA | 本仓 `releases/latest`（随后可钉 `.exe` 资产） |
+| macOS | 并列 CTA | 同上（随后可钉 `.dmg` 等资产） |
 
-- 优先使用「最新 Release」稳定 URL 模式；若不稳定再改为发布时写死版本并更新站点。
+- 对外 GitHub / Issues / Releases **只使用公开仓** [huanalesite](https://github.com/wljgit/huanalesite)。桌面应用源码仓 `huanale` 保持 private，不链给访客。
 - 未代码签名 / 未公证时：诚实提示 SmartScreen（Windows）或 Gatekeeper（macOS）可能拦截。
 
 ## 国内镜像（后置）
