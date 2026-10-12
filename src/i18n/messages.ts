@@ -96,30 +96,34 @@ const zh: Messages = {
   featureDigestBody:
     "如果你想留一份当天的流水账，看上午、中午、晚上各做了什么，AI 日报可以把活动收成这样的分段小结。这是可选项，配置模型后才能启用。更推荐使用本地模型；若改走第三方远程接口，使用数据便会发给第三方，需权衡隐私风险。",
   privacyEyebrow: "隐私",
-  privacyTitle: "默认本机。采集边界说清楚。",
-  privacyLead: "官网不托管你的活动数据；桌面应用也默认不上云、无强制账号。",
-  privacyCollectTitle: "默认会记",
-  privacyCollectBody: "前台应用、窗口标题、时长，以及空闲 / 离开。",
-  privacySkipTitle: "默认不记",
-  privacySkipBody: "剪贴板、截屏、全局键盘内容。",
+  privacyTitle: "数据留在本机，加密由你决定",
+  privacyLead:
+    "活动数据只保存在你自己的电脑上，不会存到官网上，也不需要账号。多机同步时以加密方式交换。历史记录也可开启加密封存：即便本机数据库文件被拷走，已封存的日子仍难以被直接读出。",
+  privacyCollectTitle: "会记",
+  privacyCollectBody:
+    "只记前台应用、窗口标题、停留时长，以及空闲 / 离开。标题里常会带上有用的线索——比如浏览器标签上的页面或视频名——方便你回看自己在某个应用里大致做了什么。",
+  privacySkipTitle: "不记",
+  privacySkipBody:
+    "不会进入应用内部读取内容：Word、Excel 里写了什么，页面正文是什么，都不会去取。记的是窗口标题这一层，不是文档或网页正文。剪贴板、截屏、键鼠输入同样不采。",
   privacyLocalTitle: "存在哪",
-  privacyLocalBody: "本机 SQLite。只有你显式配置云端模型 API 时，摘要字段才会发往该 API。",
+  privacyLocalBody:
+    "本机 SQLite。开启隐私保护后，过往日期的活动可以加密封存；多机同步则在配对后加密交换。只有配置第三方远程模型做 AI 日报时，使用数据才会发给对方。",
   faqEyebrow: "FAQ",
   faqTitle: "常见问题",
   faqAccountQ: "需要注册账号吗？",
   faqAccountA: "不需要。免费使用不依赖官网账号体系。",
   faqUploadQ: "数据会上云吗？",
   faqUploadA:
-    "默认不会。活动记录留在本机。可选云端 AI 需你自行配置，并只会发送用于摘要的字段。",
+    "不会。活动记录留在本机。只有配置了第三方远程模型做 AI 日报时，相关使用数据才会发给对方；使用本地模型则不会外发。",
   faqPlatformsQ: "支持哪些平台？",
   faqPlatformsA:
     "目前支持 Windows 与 macOS 桌面版。没有 iOS / Android 移动版。",
   faqSignQ: "安装时被系统拦截？",
   faqSignA:
-    "未代码签名时 Windows SmartScreen，或未公证时 macOS Gatekeeper，可能提示未知发布者。可从本站 GitHub Releases 核对来源后再安装。",
-  ctaTitle: "先装上，看看今天时间花在哪。",
+    "有可能。Windows 或 macOS 遇到尚不熟悉的安装包时，常会弹出「未知发布者」一类提示。请确认安装包来自本站指向的 GitHub Releases，核对无误后再继续安装。",
+  ctaTitle: "先装上，看看今天时间花在哪",
   ctaLead: "一次安装即可用。无需浏览器扩展。",
-  footerTagline: "本机时间追踪桌面应用",
+  footerTagline: "时间花在哪，一眼就看见",
   footerProduct: "产品",
   footerOpenSource: "开源",
   footerHome: "首页",
@@ -166,33 +170,34 @@ const en: Messages = {
   featureDigestBody:
     "If you want a plain log of the day - what you did in the morning, afternoon, and evening - AI digest turns activity into short period summaries. It is optional and only works after you configure a model. A local model is recommended; with a third-party remote API, your usage data is sent to that provider, so weigh the privacy trade-off.",
   privacyEyebrow: "Privacy",
-  privacyTitle: "Local by default. Clear capture boundaries.",
+  privacyTitle: "Data stays on your computer; encryption is yours to enable",
   privacyLead:
-    "This site never hosts your activity data. The desktop app also defaults to no cloud and no required account.",
-  privacyCollectTitle: "Captured by default",
+    "Activity stays only on your own computer - not on this website, and no account is required. Multi-device sync exchanges data encrypted. Past days can also be sealed with encryption, so even if the local database file is copied off the machine, sealed history is much harder to read.",
+  privacyCollectTitle: "Captured",
   privacyCollectBody:
-    "Foreground app, window title, duration, and idle / away.",
-  privacySkipTitle: "Not captured by default",
-  privacySkipBody: "Clipboard, screenshots, or global keystroke content.",
+    "Only the foreground app, window title, how long you stayed, and idle / away. Titles often carry useful clues - like a page or video name on a browser tab - so you can recall roughly what you did in that app.",
+  privacySkipTitle: "Not captured",
+  privacySkipBody:
+    "It does not go inside apps to read content: what you typed in Word or Excel, or the body of a page, is never taken. What is kept is the window-title layer, not document or page content. Clipboard, screenshots, and keystroke input are not captured either.",
   privacyLocalTitle: "Where it lives",
   privacyLocalBody:
-    "Local SQLite. Only if you configure a cloud model API do summary fields go to that API.",
+    "Local SQLite. With privacy protection on, past days can be sealed encrypted; multi-device sync exchanges data encrypted after pairing. Only if you configure a third-party remote model for AI digest is usage data sent to that provider.",
   faqEyebrow: "FAQ",
   faqTitle: "Common questions",
   faqAccountQ: "Do I need an account?",
   faqAccountA: "No. Free use does not depend on a website account.",
   faqUploadQ: "Is my data uploaded?",
   faqUploadA:
-    "Not by default. Activity stays on your machine. Optional cloud AI requires your own config and only sends fields needed for a digest.",
+    "No. Activity stays on your machine. Only if you configure a third-party remote model for AI digest is related usage data sent to that provider; a local model does not send it out.",
   faqPlatformsQ: "Which platforms are supported?",
   faqPlatformsA:
     "Windows and macOS desktops today. There is no iOS or Android app.",
   faqSignQ: "Does the OS block the installer?",
   faqSignA:
-    "Without code signing, Windows SmartScreen - or Gatekeeper on unsigned/unnotarized macOS builds - may warn about an unknown publisher. Verify the build on this site's GitHub Releases before installing.",
+    "It might. Windows and macOS often warn about an unknown publisher when they do not yet recognize an installer. Make sure the file comes from this site's GitHub Releases, then continue only after you have checked it.",
   ctaTitle: "Install it. See where today went.",
   ctaLead: "One install. No browser extension required.",
-  footerTagline: "Local time-tracking for your desktop",
+  footerTagline: "See where your time goes",
   footerProduct: "Product",
   footerOpenSource: "Open source",
   footerHome: "Home",
