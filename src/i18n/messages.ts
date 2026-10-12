@@ -82,18 +82,19 @@ const zh: Messages = {
   featuresEyebrow: "功能",
   featuresTitle: "为日常回看而做，不是监控套件",
   featuresLead:
-    "一天过去之后，时间线会把你在电脑前的片段摊开，规则报表再汇总时长与占比。笔记本和台式上的记录可以同步到一起，拼成完整的一天；需要文字归纳时，再打开可选的 AI 日报。",
+    "一天过去之后，时间线会把你在电脑前的片段摊开，规则报表再汇总时长与占比。笔记本和台式上的记录可以同步到一起，拼成完整的一天；需要文字归纳时，再打开 AI 日报。",
   featureTimelineTitle: "时间线",
   featureTimelineBody:
-    "按日浏览前台片段：竖直时间轴与应用泳道，列表视图随时切换。",
+    "按天回看你在电脑前切换过哪些应用、各待了多久。通过时间轴视图，可以清楚地看出主要时间花在了哪些应用上；通过列表视图，可以看到更多细节。",
   featureReportsTitle: "规则报表",
-  featureReportsBody: "时长与占比由程序汇总，不依赖模型，打开就能看。",
+  featureReportsBody:
+    "把零散记录收成可读的统计：按天、按周、按月，或自选一段日子，看各应用的时长与占比。有多台电脑时，也能分开查看每台机器花了多少时间。汇总按规则计算，不依赖大模型。",
   featureSyncTitle: "多机同步",
   featureSyncBody:
-    "笔记本与台式各自记账，也能把记录合到一起回看。同步由你显式开启，活动数据仍以本机为家。",
-  featureDigestTitle: "可选 AI 日报",
+    "有笔记本、也有台式，或手头不止一台电脑时，记录往往散落各处。配对之后，各台机器上的活动会加密同步到一起，既不用自己导出、对照、手工合并，传输过程也仍保护隐私。",
+  featureDigestTitle: "AI 日报",
   featureDigestBody:
-    "你自己配置本地或云端模型后，再把当天事件收成叙事；密钥留在本机。",
+    "如果你想留一份当天的流水账，看上午、中午、晚上各做了什么，AI 日报可以把活动收成这样的分段小结。这是可选项，配置模型后才能启用。更推荐使用本地模型；若改走第三方远程接口，使用数据便会发给第三方，需权衡隐私风险。",
   privacyEyebrow: "隐私",
   privacyTitle: "默认本机。采集边界说清楚。",
   privacyLead: "官网不托管你的活动数据；桌面应用也默认不上云、无强制账号。",
@@ -151,19 +152,19 @@ const en: Messages = {
   featuresEyebrow: "Features",
   featuresTitle: "Built for reviewing your day - not surveillance",
   featuresLead:
-    "After a day ends, the timeline lays out what you did at the computer; rule-based reports then summarize durations and shares. Records from a laptop and a desktop can sync into one continuous day. For a written recap, turn on the optional AI digest.",
+    "After a day ends, the timeline lays out what you did at the computer; rule-based reports then summarize durations and shares. Records from a laptop and a desktop can sync into one continuous day. For a written recap, turn on AI digest.",
   featureTimelineTitle: "Timeline",
   featureTimelineBody:
-    "Browse a day of foreground segments: vertical axis with app swimlanes, or a list view.",
+    "Review a day of apps you used and how long you stayed in each. The timeline view makes it clear which apps took most of your time; the list view shows more detail.",
   featureReportsTitle: "Rule-based reports",
   featureReportsBody:
-    "Durations and shares are computed in-app - no model required.",
+    "Turn scattered records into readable stats: by day, week, or month, or pick your own range to see duration and share per app. With more than one computer, you can also break the numbers down by machine. Totals follow fixed rules - no model required.",
   featureSyncTitle: "Multi-device sync",
   featureSyncBody:
-    "Track separately on a laptop and a desktop, then bring the records together to review. Sync is opt-in; activity data still lives on your machines first.",
-  featureDigestTitle: "Optional AI digest",
+    "When you have a laptop and a desktop - or more than one computer - records often end up scattered. After pairing, activity syncs across machines in encrypted form: no more exporting, comparing, or merging by hand, and privacy stays protected in transit.",
+  featureDigestTitle: "AI digest",
   featureDigestBody:
-    "Configure a local or cloud model yourself to narrate the day. Keys stay on your machine.",
+    "If you want a plain log of the day - what you did in the morning, afternoon, and evening - AI digest turns activity into short period summaries. It is optional and only works after you configure a model. A local model is recommended; with a third-party remote API, your usage data is sent to that provider, so weigh the privacy trade-off.",
   privacyEyebrow: "Privacy",
   privacyTitle: "Local by default. Clear capture boundaries.",
   privacyLead:
