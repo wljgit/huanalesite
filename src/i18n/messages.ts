@@ -70,7 +70,8 @@ const zh: Messages = {
   langEn: "EN",
   badge: "本机优先 · Local-first",
   headline: "时间花在哪，一眼就看见",
-  subhead: "自动记下前台应用。默认不上云，数据留在你的电脑。",
+  subhead:
+    "如果你习惯记日志，或总想弄清自己在电脑前到底干了什么——以前往往只能靠手工一条条记，又碎又难坚持。现在有更省事的办法：花哪了在本机自动记下你用过的应用，打开就能回看时间花在哪。数据始终留在你的电脑，无需账号，不进云端。",
   downloadWindows: "下载 Windows 版",
   downloadMac: "下载 macOS 版",
   viewGithub: "查看 GitHub →",
@@ -123,7 +124,7 @@ const zh: Messages = {
 };
 
 const en: Messages = {
-  metaTitle: "花哪了 — Local time tracking",
+  metaTitle: "花哪了 - Local time tracking",
   metaDescription:
     "花哪了 automatically records where your time goes on your machine. No cloud by default, no account. Windows and macOS.",
   navFeatures: "Features",
@@ -135,14 +136,14 @@ const en: Messages = {
   badge: "Local-first",
   headline: "See where your time goes",
   subhead:
-    "Foreground apps, recorded automatically. No cloud by default — data stays on your computer.",
+    "If you keep a journal, or just want to know what you actually did at the computer - you used to have to log it by hand, tedious and hard to stick with. There's an easier way: huanale automatically records the apps you use on your machine, so you can look back and see where the time went. Data stays on your computer - no account, nothing sent to the cloud.",
   downloadWindows: "Download for Windows",
   downloadMac: "Download for macOS",
   viewGithub: "View on GitHub →",
   metaLine: "Windows · macOS · No account · Local data",
   screenshotAlt: "花哪了 app timeline screenshot",
   featuresEyebrow: "Features",
-  featuresTitle: "Built for reviewing your day — not surveillance.",
+  featuresTitle: "Built for reviewing your day - not surveillance.",
   featuresLead:
     "Install and go. Start with the timeline, then rule-based reports. AI digests are optional.",
   featureTimelineTitle: "Timeline",
@@ -150,7 +151,7 @@ const en: Messages = {
     "Browse a day of foreground segments: vertical axis with app swimlanes, or a list view.",
   featureReportsTitle: "Rule-based reports",
   featureReportsBody:
-    "Durations and shares are computed in-app — no model required.",
+    "Durations and shares are computed in-app - no model required.",
   featureDigestTitle: "Optional AI digest",
   featureDigestBody:
     "Configure a local or cloud model yourself to narrate the day. Keys stay on your machine.",
@@ -178,7 +179,7 @@ const en: Messages = {
     "Windows and macOS desktops today. There is no iOS or Android app.",
   faqSignQ: "Does the OS block the installer?",
   faqSignA:
-    "Without code signing, Windows SmartScreen — or Gatekeeper on unsigned/unnotarized macOS builds — may warn about an unknown publisher. Verify the build on this site’s GitHub Releases before installing.",
+    "Without code signing, Windows SmartScreen - or Gatekeeper on unsigned/unnotarized macOS builds - may warn about an unknown publisher. Verify the build on this site's GitHub Releases before installing.",
   ctaTitle: "Install it. See where today went.",
   ctaLead: "One install. No browser extension required.",
   footerTagline: "Local time-tracking for your desktop",
