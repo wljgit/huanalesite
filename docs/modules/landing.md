@@ -16,7 +16,7 @@
 | 功能 / 隐私 / FAQ / CTA | `Features` / `Privacy` / `Faq` / `CtaBand` |
 | 文案 | `src/i18n/messages.ts` |
 | 页脚 | `src/components/SiteFooter.astro`（产品栏 + 开源栏：GitHub / 文档=本仓 README / Releases / Issues） |
-| 截图 | `public/screenshots/timeline.png`（来自运行中的桌面应用） |
+| 截图 | `public/screenshots/{zh,en}-{timeline,reports}.png`（中/英各两张，Hero 叠放） |
 | Icon | `public/app-icon.png`（来自 `huanale` `src-tauri/icons`） |
 
 ## 范围

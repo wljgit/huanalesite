@@ -11,6 +11,8 @@ interface Props {
 
 const { locale } = Astro.props;
 const m = t(locale);
+const timelineSrc = `/screenshots/${locale}-timeline.png`;
+const reportsSrc = `/screenshots/${locale}-reports.png`;
 ---
 
 <section class="hero" id="download">
@@ -31,21 +33,32 @@ const m = t(locale);
     </div>
     <p class="meta">{m.metaLine}</p>
 
-    <figure class="preview">
-      <img
-        src="/screenshots/timeline.png"
-        alt={m.screenshotAlt}
-        width="1628"
-        height="1055"
-        loading="eager"
-      />
-    </figure>
+    <div class="preview-stack">
+      <figure class="preview preview--back">
+        <img
+          src={timelineSrc}
+          alt={m.screenshotAlt}
+          width="1480"
+          height="1120"
+          loading="eager"
+        />
+      </figure>
+      <figure class="preview preview--front">
+        <img
+          src={reportsSrc}
+          alt={m.screenshotReportsAlt}
+          width="1480"
+          height="1120"
+          loading="eager"
+        />
+      </figure>
+    </div>
   </div>
 </section>
 
 <style>
   .hero {
-    padding: 4.5rem 0 2rem;
+    padding: 4.5rem 0 0.5rem;
     text-align: left;
   }
 
@@ -113,9 +126,16 @@ const m = t(locale);
     text-align: center;
   }
 
+  .preview-stack {
+    position: relative;
+    margin: 3.25rem auto 0;
+    width: min(100%, 980px);
+    aspect-ratio: 1.28 / 1;
+    isolation: isolate;
+  }
+
   .preview {
-    margin: 3rem auto 0;
-    width: min(100%, 920px);
+    margin: 0;
     border: 1px solid var(--line);
     border-radius: 16px;
     overflow: hidden;
@@ -126,22 +146,80 @@ const m = t(locale);
   .preview img {
     width: 100%;
     height: auto;
+    display: block;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .preview {
-      animation: rise 0.7s ease both;
+  /* Timeline: top-left, underneath */
+  .preview--back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 78%;
+    z-index: 1;
+  }
+
+  /* Reports: bottom-right, on top; translate keeps it slightly higher without extra gap */
+  .preview--front {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 78%;
+    transform: translateY(-6%);
+    z-index: 2;
+  }
+
+  @media (max-width: 720px) {
+    .preview-stack {
+      aspect-ratio: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .preview--back,
+    .preview--front {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      width: 100%;
+    }
+
+    .preview--back {
+      order: -1;
     }
   }
 
-  @keyframes rise {
+  @media (prefers-reduced-motion: no-preference) {
+    .preview--back {
+      animation: rise-back 0.7s ease both;
+    }
+
+    .preview--front {
+      animation: rise-front 0.7s ease 0.06s both;
+    }
+  }
+
+  @keyframes rise-back {
+    from {
+      opacity: 0.01;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes rise-front {
     from {
       opacity: 0.01;
       transform: translateY(12px);
     }
     to {
       opacity: 1;
-      transform: none;
+      transform: translateY(-6%);
     }
   }
 </style>

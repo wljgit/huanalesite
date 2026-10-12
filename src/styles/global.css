@@ -97,6 +97,11 @@ img {
   padding: 5rem 0;
 }
 
+/* Hero sits above the first section; tighten that join. */
+.hero + .section {
+  padding-top: 2.75rem;
+}
+
 .section + .section {
   border-top: 1px solid var(--line);
 }

@@ -17,6 +17,7 @@ export type Messages = {
   viewGithub: string;
   metaLine: string;
   screenshotAlt: string;
+  screenshotReportsAlt: string;
   featuresEyebrow: string;
   featuresTitle: string;
   featuresLead: string;
@@ -79,6 +80,7 @@ const zh: Messages = {
   viewGithub: "查看 GitHub →",
   metaLine: "Windows · macOS · 无账号 · 数据本机",
   screenshotAlt: "花哪了应用时间线截图",
+  screenshotReportsAlt: "花哪了应用报表截图",
   featuresEyebrow: "功能",
   featuresTitle: "为日常回看而做，不是监控套件",
   featuresLead:
@@ -152,7 +154,8 @@ const en: Messages = {
   downloadMac: "Download for macOS",
   viewGithub: "View on GitHub →",
   metaLine: "Windows · macOS · No account · Local data",
-  screenshotAlt: "花哪了 app timeline screenshot",
+  screenshotAlt: "Huanale timeline screenshot",
+  screenshotReportsAlt: "Huanale reports screenshot",
   featuresEyebrow: "Features",
   featuresTitle: "Built for reviewing your day - not surveillance",
   featuresLead:
