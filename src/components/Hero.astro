@@ -46,13 +46,13 @@ const m = t(locale);
 <style>
   .hero {
     padding: 4.5rem 0 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero__inner {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .badge {
@@ -63,6 +63,7 @@ const m = t(locale);
     color: var(--badge-ink);
     font-size: 0.82rem;
     font-weight: 600;
+    width: fit-content;
   }
 
   h1 {
@@ -73,22 +74,24 @@ const m = t(locale);
     letter-spacing: -0.03em;
     font-weight: 900;
     text-wrap: balance;
+    text-align: left;
   }
 
   .sub {
     margin: 1.1rem 0 0;
-    max-width: 42rem;
+    max-width: min(100%, 52rem);
     color: var(--muted);
     font-size: 1.1rem;
     line-height: 1.65;
     text-wrap: pretty;
+    text-align: left;
   }
 
   .actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.75rem 1rem;
     margin-top: 1.75rem;
   }
@@ -110,7 +113,7 @@ const m = t(locale);
   }
 
   .preview {
-    margin: 3rem 0 0;
+    margin: 3rem auto 0;
     width: min(100%, 920px);
     border: 1px solid var(--line);
     border-radius: 16px;

@@ -12,6 +12,7 @@ const m = t(locale);
 const items = [
   { title: m.featureTimelineTitle, body: m.featureTimelineBody },
   { title: m.featureReportsTitle, body: m.featureReportsBody },
+  { title: m.featureSyncTitle, body: m.featureSyncBody },
   { title: m.featureDigestTitle, body: m.featureDigestBody },
 ];
 ---
@@ -40,12 +41,20 @@ const items = [
     margin: 2.5rem 0 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line);
   }
 
   li {
-    padding: 0;
+    padding: 1.25rem 1.75rem 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  li:nth-child(even) {
+    padding-left: 1.75rem;
+    padding-right: 0;
+    border-left: 1px solid var(--line);
   }
 
   h3 {
@@ -62,6 +71,12 @@ const items = [
   @media (max-width: 800px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+
+    li,
+    li:nth-child(even) {
+      padding: 1.1rem 0;
+      border-left: none;
     }
   }
 </style>

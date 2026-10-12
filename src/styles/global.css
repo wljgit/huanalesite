@@ -113,5 +113,6 @@ img {
   margin: 0.9rem 0 0;
   color: var(--muted);
   font-size: 1.05rem;
-  max-width: 40rem;
+  max-width: min(100%, 52rem);
+  line-height: 1.65;
 }

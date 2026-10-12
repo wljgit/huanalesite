@@ -24,6 +24,8 @@ export type Messages = {
   featureTimelineBody: string;
   featureReportsTitle: string;
   featureReportsBody: string;
+  featureSyncTitle: string;
+  featureSyncBody: string;
   featureDigestTitle: string;
   featureDigestBody: string;
   privacyEyebrow: string;
@@ -68,7 +70,7 @@ const zh: Messages = {
   navDownload: "下载",
   langZh: "中",
   langEn: "EN",
-  badge: "本机优先 · Local-first",
+  badge: "本机优先",
   headline: "时间花在哪，一眼就看见",
   subhead:
     "如果你习惯记日志，或总想弄清自己在电脑前到底干了什么——以前往往只能靠手工一条条记，又碎又难坚持。现在有更省事的办法：花哪了在本机自动记下你用过的应用，打开就能回看时间花在哪。数据始终留在你的电脑，无需账号，不进云端。",
@@ -78,13 +80,17 @@ const zh: Messages = {
   metaLine: "Windows · macOS · 无账号 · 数据本机",
   screenshotAlt: "花哪了应用时间线截图",
   featuresEyebrow: "功能",
-  featuresTitle: "为日常回看而做，不是监控套件。",
-  featuresLead: "装上就能用。先看清时间线，再用规则报表；AI 日报可选。",
+  featuresTitle: "为日常回看而做，不是监控套件",
+  featuresLead:
+    "一天过去之后，时间线会把你在电脑前的片段摊开，规则报表再汇总时长与占比。笔记本和台式上的记录可以同步到一起，拼成完整的一天；需要文字归纳时，再打开可选的 AI 日报。",
   featureTimelineTitle: "时间线",
   featureTimelineBody:
     "按日浏览前台片段：竖直时间轴与应用泳道，列表视图随时切换。",
   featureReportsTitle: "规则报表",
   featureReportsBody: "时长与占比由程序汇总，不依赖模型，打开就能看。",
+  featureSyncTitle: "多机同步",
+  featureSyncBody:
+    "笔记本与台式各自记账，也能把记录合到一起回看。同步由你显式开启，活动数据仍以本机为家。",
   featureDigestTitle: "可选 AI 日报",
   featureDigestBody:
     "你自己配置本地或云端模型后，再把当天事件收成叙事；密钥留在本机。",
@@ -143,15 +149,18 @@ const en: Messages = {
   metaLine: "Windows · macOS · No account · Local data",
   screenshotAlt: "花哪了 app timeline screenshot",
   featuresEyebrow: "Features",
-  featuresTitle: "Built for reviewing your day - not surveillance.",
+  featuresTitle: "Built for reviewing your day - not surveillance",
   featuresLead:
-    "Install and go. Start with the timeline, then rule-based reports. AI digests are optional.",
+    "After a day ends, the timeline lays out what you did at the computer; rule-based reports then summarize durations and shares. Records from a laptop and a desktop can sync into one continuous day. For a written recap, turn on the optional AI digest.",
   featureTimelineTitle: "Timeline",
   featureTimelineBody:
     "Browse a day of foreground segments: vertical axis with app swimlanes, or a list view.",
   featureReportsTitle: "Rule-based reports",
   featureReportsBody:
     "Durations and shares are computed in-app - no model required.",
+  featureSyncTitle: "Multi-device sync",
+  featureSyncBody:
+    "Track separately on a laptop and a desktop, then bring the records together to review. Sync is opt-in; activity data still lives on your machines first.",
   featureDigestTitle: "Optional AI digest",
   featureDigestBody:
     "Configure a local or cloud model yourself to narrate the day. Keys stay on your machine.",
