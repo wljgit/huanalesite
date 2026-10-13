@@ -3,6 +3,19 @@ import type { Locale } from "../lib/locale";
 import { t } from "../i18n/messages";
 import "../styles/global.css";
 
+// Self-hosted OFL fonts (avoid Google Fonts latency / blocks in CN)
+import "@fontsource/zcool-xiaowei/chinese-simplified-400.css";
+import "@fontsource/noto-sans-sc/chinese-simplified-400.css";
+import "@fontsource/noto-sans-sc/chinese-simplified-500.css";
+import "@fontsource/noto-sans-sc/chinese-simplified-600.css";
+import "@fontsource/noto-sans-sc/chinese-simplified-700.css";
+import "@fontsource/noto-sans-sc/chinese-simplified-900.css";
+import "@fontsource/noto-sans-sc/latin-400.css";
+import "@fontsource/noto-sans-sc/latin-500.css";
+import "@fontsource/noto-sans-sc/latin-600.css";
+import "@fontsource/noto-sans-sc/latin-700.css";
+import "@fontsource/noto-sans-sc/latin-900.css";
+
 interface Props {
   locale: Locale;
 }
@@ -25,12 +38,6 @@ const canonicalPath = locale === "en" ? "/en/" : "/";
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/app-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=ZCOOL+XiaoWei&display=swap"
-      rel="stylesheet"
-    />
     <title>{m.metaTitle}</title>
   </head>
   <body>
