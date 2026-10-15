@@ -1,0 +1,19 @@
+---
+import LegalShell from "../components/LegalShell.astro";
+import { eulaText, splitLegalBlocks } from "../lib/legal";
+import { t } from "../i18n/messages";
+
+const locale = "zh" as const;
+const m = t(locale);
+const blocks = splitLegalBlocks(eulaText(locale));
+---
+
+<LegalShell
+  locale={locale}
+  title={m.licenseMetaTitle}
+  description={m.licenseMetaDescription}
+  canonicalPath="/license/"
+>
+  {blocks.map((block) => <p class="legal-plain">{block}</p>)}
+  <p class="legal-note">{m.licenseInstallNote}</p>
+</LegalShell>

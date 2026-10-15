@@ -6,6 +6,7 @@ import {
   SITE_ISSUES,
   SITE_RELEASES_LATEST,
 } from "../lib/download";
+import { homePath, licensePath, privacyHash } from "../lib/legal";
 import { t } from "../i18n/messages";
 
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const m = t(locale);
-const home = locale === "en" ? "/en/" : "/";
+const home = homePath(locale);
 ---
 
 <footer class="footer">
@@ -34,11 +35,12 @@ const home = locale === "en" ? "/en/" : "/";
         <a href={`${home}#features`}>{m.navFeatures}</a>
         <a href={`${home}#faq`}>{m.navFaq}</a>
         <a href={`${home}#download`}>{m.navDownload}</a>
-        <a href={`${home}#privacy`}>{m.footerPrivacy}</a>
+        <a href={privacyHash(locale)}>{m.footerPrivacy}</a>
+        <a href={licensePath(locale)}>{m.footerLicense}</a>
       </nav>
 
-      <nav aria-label={m.footerOpenSource}>
-        <p class="col-title">{m.footerOpenSource}</p>
+      <nav aria-label={m.footerResources}>
+        <p class="col-title">{m.footerResources}</p>
         <a href={SITE_GITHUB}>{m.footerGithub}</a>
         <a href={SITE_DOCS}>{m.footerDocs}</a>
         <a href={SITE_RELEASES_LATEST}>{m.footerReleases}</a>
@@ -46,12 +48,16 @@ const home = locale === "en" ? "/en/" : "/";
       </nav>
     </div>
   </div>
+
+  <div class="wrap footer__copy">
+    <p>{m.footerCopyright}</p>
+  </div>
 </footer>
 
 <style>
   .footer {
     border-top: 1px solid var(--line);
-    padding: 2.5rem 0 2.75rem;
+    padding: 2.5rem 0 2rem;
   }
 
   .footer__inner {
@@ -81,7 +87,7 @@ const home = locale === "en" ? "/en/" : "/";
     margin: 0.45rem 0 0;
     color: var(--muted);
     font-size: 0.9rem;
-    max-width: 16rem;
+    max-width: 18rem;
   }
 
   .cols {
@@ -110,5 +116,17 @@ const home = locale === "en" ? "/en/" : "/";
 
   nav a:hover {
     color: var(--ink);
+  }
+
+  .footer__copy {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer__copy p {
+    margin: 0;
+    color: #9a9a9a;
+    font-size: 0.82rem;
   }
 </style>

@@ -16,6 +16,7 @@ export type Messages = {
   downloadMac: string;
   viewGithub: string;
   metaLine: string;
+  downloadLicenseHint: string;
   screenshotAlt: string;
   screenshotReportsAlt: string;
   featuresEyebrow: string;
@@ -52,19 +53,25 @@ export type Messages = {
   ctaLead: string;
   footerTagline: string;
   footerProduct: string;
-  footerOpenSource: string;
+  footerResources: string;
   footerHome: string;
   footerGithub: string;
   footerDocs: string;
   footerReleases: string;
   footerIssues: string;
   footerPrivacy: string;
+  footerLicense: string;
+  footerCopyright: string;
+  legalBackHome: string;
+  licenseMetaTitle: string;
+  licenseMetaDescription: string;
+  licenseInstallNote: string;
 };
 
 const zh: Messages = {
   metaTitle: "花哪了 — 本机时间追踪",
   metaDescription:
-    "花哪了：在本机自动记下时间花在哪。默认不上云，无账号。支持 Windows 与 macOS。",
+    "花哪了：在本机自动记下时间花在哪。默认数据保存在本机，无账号。支持 Windows 与 macOS。",
   navFeatures: "功能",
   navPrivacy: "隐私",
   navFaq: "常见问题",
@@ -74,11 +81,12 @@ const zh: Messages = {
   badge: "本机优先",
   headline: "时间花在哪，一眼就看见",
   subhead:
-    "如果你习惯记日志，或总想弄清自己在电脑前到底干了什么——以前往往只能靠手工一条条记，又碎又难坚持。现在有更省事的办法：花哪了在本机自动记下你用过的应用，打开就能回看时间花在哪。数据始终留在你的电脑，无需账号，不进云端。",
+    "如果你习惯记日志，或总想弄清自己在电脑前到底干了什么——以前往往只能靠手工一条条记，又碎又难坚持。现在有更省事的办法：花哪了在本机自动记下你用过的应用，打开就能回看时间花在哪。默认数据保存在本机，无需账号；开启 AI 或同步等可选功能后，相关数据才会按说明离开本机。",
   downloadWindows: "下载 Windows 版",
   downloadMac: "下载 macOS 版",
   viewGithub: "查看 GitHub →",
-  metaLine: "Windows · macOS · 无账号 · 数据本机",
+  metaLine: "Windows · macOS · 无账号 · 默认本机",
+  downloadLicenseHint: "安装时需同意许可协议",
   screenshotAlt: "花哪了应用时间线截图",
   screenshotReportsAlt: "花哪了应用报表截图",
   featuresEyebrow: "功能",
@@ -98,9 +106,9 @@ const zh: Messages = {
   featureDigestBody:
     "如果你想留一份当天的流水账，看上午、中午、晚上各做了什么，AI 日报可以把活动收成这样的分段小结。这是可选项，配置模型后才能启用。更推荐使用本地模型；若改走第三方远程接口，使用数据便会发给第三方，需权衡隐私风险。",
   privacyEyebrow: "隐私",
-  privacyTitle: "数据留在本机，加密由你决定",
+  privacyTitle: "默认保存在本机，可选功能由你开启",
   privacyLead:
-    "活动数据只保存在你自己的电脑上，不会存到官网上，也不需要账号。多机同步时以加密方式交换。历史记录也可开启加密封存：即便本机数据库文件被拷走，已封存的日子仍难以被直接读出。",
+    "活动数据默认只保存在你自己的电脑上，不会存到官网上，也不需要账号。多机同步、云端 AI 等可选功能，需你主动配置后才会按说明外发。历史记录也可开启加密封存。统计仅供个人参考，不作考勤或法律证据。",
   privacyCollectTitle: "会记",
   privacyCollectBody:
     "只记前台应用、窗口标题、停留时长，以及空闲 / 离开。标题里常会带上有用的线索——比如浏览器标签上的页面或视频名——方便你回看自己在某个应用里大致做了什么。",
@@ -109,14 +117,14 @@ const zh: Messages = {
     "不会进入应用内部读取内容：Word、Excel 里写了什么，页面正文是什么，都不会去取。记的是窗口标题这一层，不是文档或网页正文。剪贴板、截屏、键鼠输入同样不采。",
   privacyLocalTitle: "存在哪",
   privacyLocalBody:
-    "本机 SQLite。开启隐私保护后，过往日期的活动可以加密封存；多机同步则在配对后加密交换。只有配置第三方远程模型做 AI 日报时，使用数据才会发给对方。",
+    "本机 SQLite。开启隐私保护后，过往日期的活动可以加密封存；多机同步则在配对后加密交换。只有配置第三方远程模型做 AI 日报，或开启同步时，相关数据才会离开本机。",
   faqEyebrow: "FAQ",
   faqTitle: "常见问题",
   faqAccountQ: "需要注册账号吗？",
   faqAccountA: "不需要。免费使用不依赖官网账号体系。",
   faqUploadQ: "数据会上云吗？",
   faqUploadA:
-    "不会。活动记录留在本机。只有配置了第三方远程模型做 AI 日报时，相关使用数据才会发给对方；使用本地模型则不会外发。",
+    "默认不会。活动记录保存在本机。只有配置了第三方远程模型做 AI 日报，或开启多机同步时，相关数据才会按说明离开本机；使用本地模型且不同步则不会外发。",
   faqPlatformsQ: "支持哪些平台？",
   faqPlatformsA:
     "目前支持 Windows 与 macOS 桌面版。没有 iOS / Android 移动版。",
@@ -127,19 +135,27 @@ const zh: Messages = {
   ctaLead: "一次安装即可用。无需浏览器扩展。",
   footerTagline: "时间花在哪，一眼就看见",
   footerProduct: "产品",
-  footerOpenSource: "开源",
+  footerResources: "本站",
   footerHome: "首页",
   footerGithub: "GitHub",
   footerDocs: "文档",
   footerReleases: "Releases",
   footerIssues: "Issues",
   footerPrivacy: "隐私",
+  footerLicense: "许可协议",
+  footerCopyright: "Copyright © 2026 wljgit. All rights reserved.",
+  legalBackHome: "← 回到首页",
+  licenseMetaTitle: "许可协议 — 花哪了",
+  licenseMetaDescription:
+    "花哪了最终用户许可协议（EULA）。安装或使用即表示同意本协议；中英文冲突时以中文为准。",
+  licenseInstallNote:
+    "安装或使用本软件，即表示您已阅读并同意本协议。本页提供中文文本；英文译本见英文站许可协议页。中英文冲突时，以中文为准。",
 };
 
 const en: Messages = {
   metaTitle: "花哪了 - Local time tracking",
   metaDescription:
-    "花哪了 automatically records where your time goes on your machine. No cloud by default, no account. Windows and macOS.",
+    "Huanale automatically records where your time goes on your machine. Data stays on your device by default; no account. Windows and macOS.",
   navFeatures: "Features",
   navPrivacy: "Privacy",
   navFaq: "FAQ",
@@ -149,11 +165,12 @@ const en: Messages = {
   badge: "Local-first",
   headline: "See where your time goes",
   subhead:
-    "If you keep a journal, or just want to know what you actually did at the computer - you used to have to log it by hand, tedious and hard to stick with. There's an easier way: huanale automatically records the apps you use on your machine, so you can look back and see where the time went. Data stays on your computer - no account, nothing sent to the cloud.",
+    "If you keep a journal, or just want to know what you actually did at the computer - you used to have to log it by hand, tedious and hard to stick with. There's an easier way: huanale automatically records the apps you use on your machine, so you can look back and see where the time went. Data stays on your device by default - no account required. Optional AI or sync may send related data only when you turn them on, as described in the product notes.",
   downloadWindows: "Download for Windows",
   downloadMac: "Download for macOS",
   viewGithub: "View on GitHub →",
-  metaLine: "Windows · macOS · No account · Local data",
+  metaLine: "Windows · macOS · No account · Local by default",
+  downloadLicenseHint: "Installer requires accepting the license",
   screenshotAlt: "Huanale timeline screenshot",
   screenshotReportsAlt: "Huanale reports screenshot",
   featuresEyebrow: "Features",
@@ -173,9 +190,9 @@ const en: Messages = {
   featureDigestBody:
     "If you want a plain log of the day - what you did in the morning, afternoon, and evening - AI digest turns activity into short period summaries. It is optional and only works after you configure a model. A local model is recommended; with a third-party remote API, your usage data is sent to that provider, so weigh the privacy trade-off.",
   privacyEyebrow: "Privacy",
-  privacyTitle: "Data stays on your computer; encryption is yours to enable",
+  privacyTitle: "Local by default; optional features stay under your control",
   privacyLead:
-    "Activity stays only on your own computer - not on this website, and no account is required. Multi-device sync exchanges data encrypted. Past days can also be sealed with encryption, so even if the local database file is copied off the machine, sealed history is much harder to read.",
+    "Activity stays on your own computer by default - not on this website, and no account is required. Multi-device sync and cloud AI only send data after you configure them. Past days can also be sealed with encryption. Stats are for personal reference only - not attendance or legal evidence.",
   privacyCollectTitle: "Captured",
   privacyCollectBody:
     "Only the foreground app, window title, how long you stayed, and idle / away. Titles often carry useful clues - like a page or video name on a browser tab - so you can recall roughly what you did in that app.",
@@ -184,14 +201,14 @@ const en: Messages = {
     "It does not go inside apps to read content: what you typed in Word or Excel, or the body of a page, is never taken. What is kept is the window-title layer, not document or page content. Clipboard, screenshots, and keystroke input are not captured either.",
   privacyLocalTitle: "Where it lives",
   privacyLocalBody:
-    "Local SQLite. With privacy protection on, past days can be sealed encrypted; multi-device sync exchanges data encrypted after pairing. Only if you configure a third-party remote model for AI digest is usage data sent to that provider.",
+    "Local SQLite. With privacy protection on, past days can be sealed encrypted; multi-device sync exchanges data encrypted after pairing. Related data leaves the device only if you configure a third-party remote model for AI digest, or turn on sync.",
   faqEyebrow: "FAQ",
   faqTitle: "Common questions",
   faqAccountQ: "Do I need an account?",
   faqAccountA: "No. Free use does not depend on a website account.",
   faqUploadQ: "Is my data uploaded?",
   faqUploadA:
-    "No. Activity stays on your machine. Only if you configure a third-party remote model for AI digest is related usage data sent to that provider; a local model does not send it out.",
+    "Not by default. Activity stays on your machine. Related data leaves the device only if you configure a third-party remote model for AI digest, or turn on multi-device sync; a local model with sync off does not send it out.",
   faqPlatformsQ: "Which platforms are supported?",
   faqPlatformsA:
     "Windows and macOS desktops today. There is no iOS or Android app.",
@@ -202,13 +219,21 @@ const en: Messages = {
   ctaLead: "One install. No browser extension required.",
   footerTagline: "See where your time goes",
   footerProduct: "Product",
-  footerOpenSource: "Open source",
+  footerResources: "This site",
   footerHome: "Home",
   footerGithub: "GitHub",
   footerDocs: "Documentation",
   footerReleases: "Releases",
   footerIssues: "Issues",
   footerPrivacy: "Privacy",
+  footerLicense: "License",
+  footerCopyright: "Copyright © 2026 wljgit. All rights reserved.",
+  legalBackHome: "← Back to home",
+  licenseMetaTitle: "License — Huanale",
+  licenseMetaDescription:
+    "Huanale End User License Agreement (EULA). Installing or using the software means you agree. If English and Chinese conflict, Chinese prevails.",
+  licenseInstallNote:
+    "By installing or using the software, you acknowledge that you have read and agree to this Agreement. If this English text conflicts with the Chinese text, the Chinese text prevails.",
 };
 
 const catalog: Record<Locale, Messages> = { zh, en };

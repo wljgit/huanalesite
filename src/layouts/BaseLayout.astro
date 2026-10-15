@@ -5,11 +5,26 @@ import "../styles/global.css";
 
 interface Props {
   locale: Locale;
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, title, description, canonicalPath } = Astro.props;
 const m = t(locale);
-const canonicalPath = locale === "en" ? "/en/" : "/";
+const pageTitle = title ?? m.metaTitle;
+const pageDescription = description ?? m.metaDescription;
+const canonical = canonicalPath ?? (locale === "en" ? "/en/" : "/");
+const zhHref = canonical.startsWith("/en/")
+  ? canonical.replace(/^\/en/, "") || "/"
+  : canonical === "/en"
+    ? "/"
+    : canonical;
+const enHref = locale === "en"
+  ? canonical
+  : canonical === "/"
+    ? "/en/"
+    : `/en${canonical}`;
 ---
 
 <!doctype html>
@@ -17,15 +32,15 @@ const canonicalPath = locale === "en" ? "/en/" : "/";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={m.metaDescription} />
+    <meta name="description" content={pageDescription} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="canonical" href={canonicalPath} />
-    <link rel="alternate" hreflang="zh-CN" href="/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="zh-CN" href={zhHref} />
+    <link rel="alternate" hreflang="en" href={enHref} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/app-icon.png" />
-    <title>{m.metaTitle}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />

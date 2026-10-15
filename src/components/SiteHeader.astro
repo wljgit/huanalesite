@@ -1,6 +1,7 @@
 ---
 import type { Locale } from "../lib/locale";
 import { alternatePath } from "../lib/locale";
+import { homePath, privacyHash } from "../lib/legal";
 import { t } from "../i18n/messages";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const m = t(locale);
-const home = locale === "en" ? "/en/" : "/";
+const home = homePath(locale);
 const other = alternatePath(Astro.url.pathname, locale === "zh" ? "en" : "zh");
 ---
 
@@ -22,7 +23,7 @@ const other = alternatePath(Astro.url.pathname, locale === "zh" ? "en" : "zh");
 
     <nav class="nav" aria-label="primary">
       <a href={`${home}#features`}>{m.navFeatures}</a>
-      <a href={`${home}#privacy`}>{m.navPrivacy}</a>
+      <a href={privacyHash(locale)}>{m.navPrivacy}</a>
       <a href={`${home}#faq`}>{m.navFaq}</a>
       <a class="lang" href={other} hreflang={locale === "zh" ? "en" : "zh-CN"}>
         <span class={locale === "zh" ? "is-active" : ""}>{m.langZh}</span>

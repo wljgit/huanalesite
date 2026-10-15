@@ -15,7 +15,9 @@
 | 首屏 | `src/components/Hero.astro` |
 | 功能 / 隐私 / FAQ / CTA | `Features` / `Privacy` / `Faq` / `CtaBand` |
 | 文案 | `src/i18n/messages.ts` |
-| 页脚 | `src/components/SiteFooter.astro`（产品栏 + 开源栏：GitHub / 文档=本仓 README / Releases / Issues） |
+| 页脚 | `src/components/SiteFooter.astro`（产品栏含隐私锚点/许可；本站栏：GitHub / 文档 / Releases / Issues；版权 © 2026 wljgit） |
+| 许可协议 | `/license/`、`/en/license/`（`src/legal/EULA.*.txt`） |
+| 隐私 | 首页 `#privacy`（见 [privacy-page.md](./privacy-page.md)）；不另做独立页 |
 | 截图 | `public/screenshots/{zh,en}-{timeline,reports}.png`（中/英各两张，Hero 叠放） |
 | Icon | `public/app-icon.png`（来自 `huanale` `src-tauri/icons`） |
 

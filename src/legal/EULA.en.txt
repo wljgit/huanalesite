@@ -1,0 +1,77 @@
+Huanale End User License Agreement
+
+Copyright © 2026 wljgit. All rights reserved.
+
+Please read this Agreement carefully before installing or using Huanale (the “Software”). By installing, copying, or otherwise using the Software, you agree to be bound by this Agreement. If you do not agree, do not install or use the Software, and uninstall any copies already installed.
+
+If there is any conflict between this English text and the Chinese text of this Agreement, the Chinese text prevails.
+
+1. License Grant
+
+Subject to this Agreement, wljgit (the “Licensor”) grants you a personal, non-exclusive, non-transferable, revocable, limited license to install and use the Software on devices you lawfully control, for personal or internal use.
+
+The Software is proprietary. All rights not expressly granted are reserved by the Licensor. This Agreement does not transfer any code, documentation, or trademarks.
+
+2. Restrictions
+
+Except as required by applicable law or with the Licensor’s prior written consent, you may not:
+
+(1) copy, modify, adapt, or translate the Software (except for one backup copy for archival purposes);
+(2) reverse engineer, decompile, or disassemble the Software, or otherwise attempt to obtain its source code;
+(3) rent, lend, sell, sublicense, distribute, or publicly make the Software available;
+(4) remove, obscure, or alter any copyright, trademark, or other proprietary notices in the Software;
+(5) use the Software for any unlawful purpose.
+
+3. Features and Data (Product Description)
+
+(1) Local capture: The Software may record on your device information such as the foreground application, window title, duration of use, and idle/away state. The exact scope depends on the Software’s features and your settings.
+(2) Storage: By default, related data is stored on your device. The Licensor does not operate a default cloud account or default cloud data store.
+(3) Optional features: If you configure a cloud model API, multi-device sync, or other network features, related data may leave your device as designed by that feature and be sent to services or devices you designate. You are responsible for assessing and accepting those risks.
+(4) Intended use: Activity statistics are for personal reference only, are not guaranteed to be complete or accurate, and must not be used as attendance, payroll, performance evaluation, or legal evidence. You may not use the Software to monitor others without lawful consent.
+
+4. User Warranties and Indemnification
+
+(1) You represent and warrant that you install and enable capture and other features of the Software only on devices and in situations where you have the lawful right to collect the relevant information, and that you have obtained and will maintain any consent, authorization, or notice required by applicable law (if any).
+(2) You are solely responsible for any claims, investigations, penalties, losses, or costs arising from your use of the Software, including without limitation unlawful monitoring, workplace or other evidence-gathering without lawful consent, and violations of privacy or employment-related laws.
+(3) If your conduct described above causes the Licensor or its affiliates to face claims, proceedings, penalties, or losses, you will defend, indemnify, and hold them harmless from and against the resulting reasonable losses, costs, and expenses (including reasonable attorneys’ fees), except to the extent caused directly by the Licensor’s willful misconduct or gross negligence.
+
+5. Ownership
+
+Intellectual property in the Software and all copies remains with the Licensor. You receive only the license rights under this Agreement, not ownership.
+
+6. Disclaimer of Warranties (AS IS) and Support
+
+THE SOFTWARE IS PROVIDED “AS IS” AND “AS AVAILABLE”. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, UNINTERRUPTED OPERATION, ERROR-FREE OPERATION, AND THAT DATA WILL NOT BE LOST OR CORRUPTED.
+
+The Software may be provided free of charge. The Licensor does not promise continued maintenance, updates, security patches, defect fixes, or compatibility with new operating systems or hardware, and providing the Software does not create any service contract, operations contract, or ongoing support obligation. The Licensor has no duty to respond to your inquiries, incidents, or requests.
+
+You assume all risk of using the Software, including without limitation capture inaccuracy, data loss or corruption, compatibility or performance issues, and consequences of third-party services you configure.
+
+7. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR AND CONTRIBUTORS SHALL NOT BE LIABLE FOR LOST PROFITS, LOST DATA, BUSINESS INTERRUPTION, LOSS OF GOODWILL, OR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, WHETHER BASED ON CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Where liability cannot be fully excluded, the Licensor’s total liability arising from the Software shall not exceed the amount you actually paid for the Software (or zero if you obtained it free of charge).
+
+Some jurisdictions do not allow certain warranty exclusions or liability limitations; in those cases, the above applies only to the maximum extent permitted.
+
+8. Termination
+
+If you breach this Agreement, this license terminates automatically. Upon termination, you must stop using the Software and destroy all copies. Sections 4, 5, 6, 7, 9, and 10 survive termination.
+
+9. Third-Party Components
+
+The Software may include or depend on third-party open-source components. Those components are licensed under their own terms; this Agreement does not change those terms.
+
+10. General
+
+(1) This Agreement is the entire agreement between you and the Licensor regarding the Software license and supersedes all prior related oral or written understandings.
+(2) If any provision is held unenforceable, the remaining provisions remain in effect.
+(3) Failure by the Licensor to enforce any right is not a waiver of that right.
+(4) Governing law and disputes: This Agreement is governed by the laws of the People’s Republic of China (excluding conflict-of-law rules). Disputes arising from this Agreement or the Software shall first be resolved through friendly negotiation; if negotiation fails, they shall be submitted to the exclusive jurisdiction of the people’s court with jurisdiction over the Licensor’s domicile.
+
+11. Contact
+
+Questions about this Agreement may be directed to wljgit via the Software’s website or other contact channels the Licensor publishes.
+
+By installing or using the Software, you acknowledge that you have read and agree to this Agreement.
