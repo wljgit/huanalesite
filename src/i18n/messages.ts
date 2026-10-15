@@ -65,7 +65,6 @@ export type Messages = {
   legalBackHome: string;
   licenseMetaTitle: string;
   licenseMetaDescription: string;
-  licenseInstallNote: string;
 };
 
 const zh: Messages = {
@@ -148,8 +147,6 @@ const zh: Messages = {
   licenseMetaTitle: "许可协议 — 花哪了",
   licenseMetaDescription:
     "花哪了最终用户许可协议（EULA）。安装或使用即表示同意本协议；中英文冲突时以中文为准。",
-  licenseInstallNote:
-    "安装或使用本软件，即表示您已阅读并同意本协议。本页提供中文文本；英文译本见英文站许可协议页。中英文冲突时，以中文为准。",
 };
 
 const en: Messages = {
@@ -231,9 +228,7 @@ const en: Messages = {
   legalBackHome: "← Back to home",
   licenseMetaTitle: "License — Huanale",
   licenseMetaDescription:
-    "Huanale End User License Agreement (EULA). Installing or using the software means you agree. If English and Chinese conflict, Chinese prevails.",
-  licenseInstallNote:
-    "By installing or using the software, you acknowledge that you have read and agree to this Agreement. If this English text conflicts with the Chinese text, the Chinese text prevails.",
+    "Huanale End User License Agreement (EULA). Installing or using the Software means you agree. If English and Chinese conflict, Chinese prevails.",
 };
 
 const catalog: Record<Locale, Messages> = { zh, en };

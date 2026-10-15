@@ -15,5 +15,4 @@ const blocks = splitLegalBlocks(eulaText(locale));
   canonicalPath="/license/"
 >
   {blocks.map((block) => <p class="legal-plain">{block}</p>)}
-  <p class="legal-note">{m.licenseInstallNote}</p>
 </LegalShell>
