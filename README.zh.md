@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://huanale.app">官网</a> ·
-  <a href="https://github.com/wljgit/huanalesite/releases">Releases</a> ·
+  <a href="https://github.com/wljgit/huanalesite/releases/latest">Releases</a> ·
   <a href="https://github.com/wljgit/huanalesite/issues">Issues</a> ·
   <a href="#安装">安装</a> ·
   <a href="#快速开始">快速开始</a> ·
@@ -37,19 +37,12 @@
 
 ## 安装
 
-产品官网：[huanale.app](https://huanale.app)。安装包尚未发布。就绪后请从 [Releases](https://github.com/wljgit/huanalesite/releases) 下载。
+产品官网：[huanale.app](https://huanale.app)。请从最新 [Releases](https://github.com/wljgit/huanalesite/releases/latest) 页底部的 Assets 下载安装包——该链接始终指向最新版本，本 README 不写死带版本号的文件地址。
 
-### Windows
-
-<!-- TODO: 安装包就绪后补上 Windows 安装包链接 -->
-
-_即将提供 — Windows 安装包（`.exe` / `.msi`）。_
-
-### macOS
-
-<!-- TODO: 安装包就绪后补上 macOS 安装包链接 -->
-
-_即将提供 — macOS 安装包（`.dmg`）。_
+| 平台 | 下载什么 |
+|------|----------|
+| **Windows** | `.exe` 安装包（x64） |
+| **macOS** | `.dmg`（Apple Silicon / `aarch64`） |
 
 > **说明：** 在安装包完成代码签名 / 公证之前，Windows SmartScreen 或 macOS Gatekeeper 可能会提示「未知发布者」。请确认文件来自本仓 Releases 后再继续安装。
 >
@@ -202,7 +195,7 @@ _即将提供 — macOS 安装包（`.dmg`）。_
 目前支持 Windows 与 macOS 桌面版。没有移动版。
 
 **安装时被系统拦截？**  
-有可能，尤其是在安装包尚未签名 / 广泛识别之前。请只用本仓 [Releases](https://github.com/wljgit/huanalesite/releases) 里的文件。
+有可能，尤其是在安装包尚未签名 / 广泛识别之前。请只用本仓 [Releases](https://github.com/wljgit/huanalesite/releases/latest) 里的文件。
 
 **能异地同步吗？**  
 目前不能。v1 仅同局域网；云传输在规划中，合并与密钥模型预计不变。

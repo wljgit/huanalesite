@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://huanale.app">Website</a> ·
-  <a href="https://github.com/wljgit/huanalesite/releases">Releases</a> ·
+  <a href="https://github.com/wljgit/huanalesite/releases/latest">Releases</a> ·
   <a href="https://github.com/wljgit/huanalesite/issues">Issues</a> ·
   <a href="#install">Install</a> ·
   <a href="#quickstart">Quickstart</a> ·
@@ -37,19 +37,12 @@
 
 ## Install
 
-Product site: [huanale.app](https://huanale.app). Installers are not published yet. When they are ready, download from [Releases](https://github.com/wljgit/huanalesite/releases).
+Product site: [huanale.app](https://huanale.app). Download installers from the latest [Releases](https://github.com/wljgit/huanalesite/releases/latest) page (Assets at the bottom) — that link always points at the newest build, so this README does not pin versioned file URLs.
 
-### Windows
-
-<!-- TODO: link the Windows installer asset when available -->
-
-_Coming soon — Windows installer (`.exe` / `.msi`)._
-
-### macOS
-
-<!-- TODO: link the macOS installer asset when available -->
-
-_Coming soon — macOS installer (`.dmg`)._
+| Platform | What to download |
+|----------|------------------|
+| **Windows** | `.exe` setup (x64) |
+| **macOS** | `.dmg` (Apple Silicon / `aarch64`) |
 
 > **Note:** Until packages are code-signed / notarized, Windows SmartScreen or macOS Gatekeeper may warn about an unknown publisher. Confirm the file comes from this repo's Releases before continuing.
 >
@@ -202,7 +195,7 @@ Not by default. Related data leaves the device only if you configure a third-par
 Windows and macOS desktops. No mobile app.
 
 **Does the OS block the installer?**  
-It might until packages are signed / widely recognized. Use files from this repo’s [Releases](https://github.com/wljgit/huanalesite/releases) only.
+It might until packages are signed / widely recognized. Use files from this repo’s [Releases](https://github.com/wljgit/huanalesite/releases/latest) only.
 
 **Can I sync over the internet?**  
 Not yet. v1 is same-LAN only; cloud transport is planned without changing the merge / key model.
