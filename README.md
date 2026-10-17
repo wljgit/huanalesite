@@ -82,8 +82,8 @@ Two views of the same day:
 
 **Notes & delete:**
 
-- Right-click an app block on the axis to **add a note** (stored locally; not synced in v1).
-- Right-click to **delete** stored segments (in-progress ones cannot). In the list, select rows (Shift / select-all) and delete the selection. Deletes stay on this machine — they are not pushed to peers.
+- Right-click an app block on the axis to **add a note** (or edit / clear it). Notes sync with paired machines over LAN (same bundle as activity; you can annotate a peer’s segment so their AI digest can see it). Note deletes propagate via sync tombstones.
+- Right-click to **delete** stored segments (in-progress ones cannot). In the list, select rows (Shift / select-all) and delete the selection. Segment deletes sync to peers on the next exchange (revision bump + delete marker); an older live copy from a peer will not write the row back.
 
 Display is minute-oriented (duration copy rounds to minutes; `<1m` for under a minute). Capture still stores seconds underneath.
 
@@ -125,13 +125,13 @@ When the range covers activity from **more than one device** (or more than one p
 
 Sidebar: **Sync** (status) · pairing lives under **Settings**.
 
-v1 is **LAN only** (same local network). Cloudflare fallback is planned later. Your local database stays the source of truth; sync exchanges encrypted activity segments between paired machines.
+v1 is **LAN only** (same local network). Cloudflare fallback is planned later. Your local database stays the source of truth; sync exchanges encrypted **activity segments** and **timeline block notes** between paired machines. AI digests are not synced in v1.
 
 ### Pairing (do this once per peer)
 
 On **both** computers, open **Settings → Sync** and use either method (same payload underneath):
 
-1. **Short code** — one side shows an 8-digit code; type it on the other within **10 minutes** (5 failed attempts lock the attempt). The code only proves you are at the pairing machine; it does not carry the sync key by itself.
+1. **Short code** — one side shows an 8-digit code; type it on the other within **10 minutes** (5 failed attempts lock the attempt). A successful pair **consumes** the code — generate a new one to pair again. The code only proves you are at the pairing machine; it does not carry the sync key by itself.
 2. **Pair string / QR text** — copy a string like `huanale-pair:1:…` (or the text inside the QR). Desktop does not open a camera; paste the string on the other machine.
 
 After pairing, both sides share a **Sync DEK** in the OS keychain. You do not set a separate “sync password”. You cannot pair a machine with itself. If a peer is already stored with a different Sync DEK, the app refuses to overwrite it.
@@ -145,7 +145,7 @@ After pairing and enabling sync:
 - Roughly the last **30** exchange log lines (per peer: platform + short device id)
 - **Sync now** — try once with every paired peer visible on the LAN (one log line each)
 
-With sync on, the app also exchanges about every **20 minutes** when peers are reachable. Guest Wi‑Fi client isolation, sleep, or firewalls can block discovery — that is expected on LAN v1. Deleting a segment on one machine does **not** remove it from peers in v1.
+With sync on, the app also exchanges about every **20 minutes** when peers are reachable. Guest Wi‑Fi client isolation, sleep, or firewalls can block discovery — that is expected on LAN v1. Deletes of **segments** and **notes** both propagate; AI digests and most settings do not sync.
 
 <p align="center">
   <img src="public/screenshots/en-sync.png" alt="Sync page — peer status and exchange log" width="800">
@@ -162,7 +162,7 @@ Sidebar: **Settings**. Main groups:
 | **Timeline display** | Same-app lane bridge window (default 120s); named-lane **Top-K** (default 3, range 1–4) — display only, does not change stored segments or reports |
 | **Sync** | Enable sync; start / join pairing (short code or pair string). Status and “Sync now” are on the Sync page |
 | **Privacy** | Optional day-seal protection (main password + recovery key). Once enabled, it cannot be turned off — see [Privacy](#privacy) |
-| **AI digest** | Off / local OpenAI-compatible endpoint / DeepSeek; endpoint & key; whether to send window titles |
+| **AI digest** | Off / local OpenAI-compatible endpoint / DeepSeek; endpoint & key; whether to send window titles. Local base URL must be **loopback or LAN** (e.g. `127.0.0.1`, `192.168.x.x`) — public internet APIs are rejected |
 | **Data** | Show the local data directory path |
 
 Sidebar also has **About** (version, copyright, open full EULA).
@@ -187,7 +187,7 @@ Defaults: no account, activity stays in local SQLite, nothing uploaded for norma
 | **Captured** | Foreground app, window title, duration, idle / away |
 | **Not captured** | App internals (document / page body), clipboard, screenshots, keystrokes |
 | **Optional seal** | After local midnight, past days can be encrypted once you unlock (activity, digests, and notes); today stays plaintext while “hot”. Idle auto-lock (default 5 minutes) after unlock |
-| **Sync** | Paired LAN exchange is encrypted with the Sync DEK; separate from the local seal password |
+| **Sync** | Paired LAN exchange (segments + notes) is encrypted with the Sync DEK; separate from the local seal password |
 | **AI** | Only if you configure a third-party remote model — then usage data for digest goes to that provider |
 
 ## FAQ
