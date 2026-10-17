@@ -11,7 +11,7 @@
 |------|------|
 | 落地页 | 首屏品牌、价值主张、主下载 CTA。见 [modules/landing.md](./modules/landing.md) |
 | 隐私说明 | 本机优先、采集边界（不采剪贴板/截屏/键鼠内容等）。见 [modules/privacy-page.md](./modules/privacy-page.md) |
-| 下载分发 | 链到本仓（Public）GitHub Releases；Windows / macOS 按钮。见 [modules/download.md](./modules/download.md) |
+| 下载分发 | 链到本仓（Public）GitHub Releases；Windows / macOS 按钮。见 [modules/download.md](./modules/download.md)；发版文案见 [modules/release-notes.md](./modules/release-notes.md) |
 | 托管部署 | Cloudflare Pages 连接本仓；域名可选。见 [modules/hosting.md](./modules/hosting.md) |
 
 ## 数据与账号

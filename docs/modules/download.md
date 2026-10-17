@@ -13,6 +13,7 @@
 
 - 对外 GitHub / Issues / Releases **只使用公开仓** [huanalesite](https://github.com/wljgit/huanalesite)。桌面应用源码仓 `huanale` 保持 private，不链给访客。
 - 未代码签名 / 未公证时：诚实提示 SmartScreen（Windows）或 Gatekeeper（macOS）可能拦截。
+- 发版文案与检查清单见 [release-notes.md](./release-notes.md)。
 
 ## 国内镜像（后置）
 
