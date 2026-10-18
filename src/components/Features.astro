@@ -1,0 +1,82 @@
+---
+import type { Locale } from "../lib/locale";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+
+const items = [
+  { title: m.featureTimelineTitle, body: m.featureTimelineBody },
+  { title: m.featureReportsTitle, body: m.featureReportsBody },
+  { title: m.featureSyncTitle, body: m.featureSyncBody },
+  { title: m.featureDigestTitle, body: m.featureDigestBody },
+];
+---
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="eyebrow">{m.featuresEyebrow}</p>
+    <h2>{m.featuresTitle}</h2>
+    <p class="lead">{m.featuresLead}</p>
+    <ul class="grid">
+      {
+        items.map((item) => (
+          <li>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  li {
+    padding: 1.25rem 1.75rem 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  li:nth-child(even) {
+    padding-left: 1.75rem;
+    padding-right: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    li,
+    li:nth-child(even) {
+      padding: 1.1rem 0;
+      border-left: none;
+    }
+  }
+</style>

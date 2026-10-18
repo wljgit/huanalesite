@@ -1,0 +1,74 @@
+---
+import type { Locale } from "../lib/locale";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+
+const items = [
+  { q: m.faqAccountQ, a: m.faqAccountA },
+  { q: m.faqUploadQ, a: m.faqUploadA },
+  { q: m.faqPlatformsQ, a: m.faqPlatformsA },
+  { q: m.faqSignQ, a: m.faqSignA },
+];
+---
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <p class="eyebrow">{m.faqEyebrow}</p>
+    <h2>{m.faqTitle}</h2>
+    <div class="faqs">
+      {
+        items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faqs {
+    margin-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 0;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "+";
+    float: right;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  details[open] summary::after {
+    content: "–";
+  }
+
+  p {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    max-width: 48rem;
+  }
+</style>

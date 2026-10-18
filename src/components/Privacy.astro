@@ -1,0 +1,70 @@
+---
+import type { Locale } from "../lib/locale";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+
+const items = [
+  { title: m.privacyCollectTitle, body: m.privacyCollectBody },
+  { title: m.privacySkipTitle, body: m.privacySkipBody },
+  { title: m.privacyLocalTitle, body: m.privacyLocalBody },
+];
+---
+
+<section class="section" id="privacy">
+  <div class="wrap">
+    <p class="eyebrow">{m.privacyEyebrow}</p>
+    <h2>{m.privacyTitle}</h2>
+    <p class="lead">{m.privacyLead}</p>
+    <ul class="list">
+      {
+        items.map((item) => (
+          <li>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .list {
+    list-style: none;
+    margin: 2.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: minmax(7rem, 10rem) 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    li {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+  }
+</style>

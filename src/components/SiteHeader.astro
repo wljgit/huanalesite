@@ -1,0 +1,117 @@
+---
+import type { Locale } from "../lib/locale";
+import { alternatePath } from "../lib/locale";
+import { homePath, privacyHash } from "../lib/legal";
+import { t } from "../i18n/messages";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const m = t(locale);
+const home = homePath(locale);
+const other = alternatePath(Astro.url.pathname, locale === "zh" ? "en" : "zh");
+---
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="brand" href={home} aria-label="花哪了">
+      <img class="brand__icon" src="/app-icon.png" alt="" width="32" height="32" />
+      <span class="brand__name">花哪了</span>
+    </a>
+
+    <nav class="nav" aria-label="primary">
+      <a href={`${home}#features`}>{m.navFeatures}</a>
+      <a href={privacyHash(locale)}>{m.navPrivacy}</a>
+      <a href={`${home}#faq`}>{m.navFaq}</a>
+      <a class="lang" href={other} hreflang={locale === "zh" ? "en" : "zh-CN"}>
+        <span class={locale === "zh" ? "is-active" : ""}>{m.langZh}</span>
+        <span aria-hidden="true">/</span>
+        <span class={locale === "en" ? "is-active" : ""}>{m.langEn}</span>
+      </a>
+      <a class="nav__download" href={`${home}#download`}>{m.navDownload}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    gap: 1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  .brand__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .brand__name {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    font-size: 1.55rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .nav a:hover {
+    color: var(--ink);
+  }
+
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lang .is-active {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .nav__download {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    background: var(--ink);
+    color: #fff !important;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .nav a:not(.lang):not(.nav__download) {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>花哪了 · 品牌字样对比</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- 候选：皆为可商用/开源方向，落地时再钉死自托管或 CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #111;
+      --muted: #667;
+      --line: #e8e8e8;
+      --bg: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans SC", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      padding: 48px 24px 80px;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+    h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 8px; }
+    .lead { color: var(--muted); font-size: 0.95rem; line-height: 1.55; margin: 0 0 32px; }
+    .sample {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+    .sample img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: block;
+    }
+    .wordmark { line-height: 1; letter-spacing: 0.02em; }
+    .meta {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: right;
+      max-width: 220px;
+    }
+    .f1 { font-family: "Noto Sans SC", sans-serif; font-weight: 900; font-size: 1.75rem; }
+    .f2 { font-family: "Noto Sans SC", sans-serif; font-weight: 700; font-size: 1.75rem; }
+    .f3 { font-family: "ZCOOL XiaoWei", "Noto Sans SC", serif; font-weight: 400; font-size: 1.85rem; }
+    /* 得意黑：若本机已装 Smiley Sans 会生效；否则回退 Noto */
+    .f4 {
+      font-family: "Smiley Sans", "得意黑", "Noto Sans SC", sans-serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+    }
+    /* 站酷仓耳渔阳体类几何感 — 用系统黑体粗体近似展示结构 */
+    .f5 {
+      font-family: "PingFang SC", "Microsoft YaHei UI", "Noto Sans SC", sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 0.06em;
+    }
+    .note {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    code { font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <h1>左上角品牌：icon +「花哪了」字体对比</h1>
+  <p class="lead">
+    Icon 来自桌面仓 <code>src-tauri/icons</code>。请本地打开本页看实字效果；
+    推荐优先看 A / B（无衬线、偏工具站），C 偏人文，D 需本机有得意黑才准。
+  </p>
+
+  <div class="sample">
+    <img src="app-icon-128.png" alt="" width="36" height="36" />
+    <span class="wordmark f1">花哪了</span>
+    <div class="meta"><strong>A · 推荐</strong><br />Noto Sans SC Black<br />干净、偏 omlx 工具站</div>
+  </div>
+
+  <div class="sample">
+    <img src="app-icon-128.png" alt="" width="36" height="36" />
+    <span class="wordmark f2">花哪了</span>
+    <div class="meta"><strong>B</strong><br />Noto Sans SC Bold<br />略轻一点的日常 UI 感</div>
+  </div>
+
+  <div class="sample">
+    <img src="app-icon-128.png" alt="" width="36" height="36" />
+    <span class="wordmark f5">花哪了</span>
+    <div class="meta"><strong>C</strong><br />系统黑体 + 字距<br />落地稳，个性弱</div>
+  </div>
+
+  <div class="sample">
+    <img src="app-icon-128.png" alt="" width="36" height="36" />
+    <span class="wordmark f3">花哪了</span>
+    <div class="meta"><strong>D</strong><br />站酷小薇（衬线）<br />更柔，偏品牌叙事</div>
+  </div>
+
+  <div class="sample">
+    <img src="app-icon-128.png" alt="" width="36" height="36" />
+    <span class="wordmark f4">花哪了</span>
+    <div class="meta"><strong>E</strong><br />得意黑 Smiley Sans<br />本机已装才看得出</div>
+  </div>
+
+  <p class="note">
+    英文站 wordmark 可固定为「花哪了」汉字品牌（不强制 Hua Na Le），
+    或副标 <code>huanale</code>——实现时再定。正式上线建议自托管字体文件，避免依赖外网 CDN。
+  </p>
+</body>
+</html>
