@@ -19,7 +19,7 @@
 | 许可协议 | `/license/`、`/en/license/`（`src/legal/EULA.*.txt`） |
 | 隐私 | 首页 `#privacy`（见 [privacy-page.md](./privacy-page.md)）；不另做独立页 |
 | 截图 | `public/screenshots/{zh,en}-{timeline,reports}.png`（中/英各两张，Hero 叠放） |
-| Icon | `public/app-icon.png`（来自 `huanale` `src-tauri/icons`） |
+| Icon | `public/app-icon.png` / `favicon.ico` / `favicon-32.png`（与 `huanale` 同源，透明底） |
 
 ## 范围
 

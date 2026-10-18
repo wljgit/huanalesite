@@ -18,7 +18,7 @@
 ## 视觉方向（规划）
 
 - 参考气质：[omlx.ai](https://omlx.ai/) — 白底、大留白、居中首屏、无衬线重字重、黑主按钮、下方产品窗预览；其下再跟介绍区块（非只有首屏）。
-- 导航品牌：**应用 icon**（`public/app-icon.png`，源自 `huanale` `src-tauri/icons`）+ 文案「花哪了」。
+- 导航品牌：**应用 icon**（`public/app-icon.png`，与桌面仓 `huanale` `src-tauri/icons` 同源）+ 文案「花哪了」。当前 G3（青绿/琥珀斜向双钩）；桌面仓源图 `app-icon.png`，用 `npm run tauri -- icon ./app-icon.png` 再生成。
 - 品牌字体：**当前选用 D · 站酷小薇（ZCOOL XiaoWei）**；若观感不佳再换 A · Noto Sans SC Black。候选页：[brand-mark-font-samples.html](./brand-mark-font-samples.html)。
 - 产品预览：**用真实应用截图**（`public/screenshots/{zh,en}-{timeline,reports}.png`），不用假 UI 拼图。时间轴形态以桌面端为准（竖直轴 + 泳道），见 `huanale` 仓 `docs/modules/timeline.md`。
 - 不做：书法/毛笔品牌字、雾山插画底、仪表盘式功能墙、假甘特时间线。
